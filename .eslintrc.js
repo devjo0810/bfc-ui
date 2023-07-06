@@ -9,7 +9,25 @@ module.exports = {
     requireConfigFile: false,
   },
   extends: ['@nuxtjs', 'plugin:nuxt/recommended', 'prettier'],
-  plugins: [],
+  plugins: ['prettier'],
   // add your custom rules here
-  rules: {},
+  rules: {
+    'no-console': 'off',
+    'vue/max-attributes-per-line': 'off',
+    'vue/multi-word-component-names': 'off',
+    'prettier/prettier': [
+      'warn',
+      {
+        singleQuote: true,
+        semi: false,
+        useTaps: true,
+        tabWidth: 2,
+        trailingComma: 'all',
+        printWidth: 120,
+        bracketSpacing: true,
+        arrowParens: 'avoid',
+        endOfLine: 'auto',
+      },
+    ],
+  },
 }
